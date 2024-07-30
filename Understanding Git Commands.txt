@@ -1,0 +1,207 @@
+=============== Configuring Git ===============
+
+1. git --version
+-> Checking git version
+
+=============== Configuring Git ===============
+
+1. git config --global user.name "Your Name"
+-> Set the name that will attached to commits.
+
+2. git config --global user.email "your.email@example.com"
+-> Set the email that will be attached to commits.
+
+3. git config --global core.editor "code --wait"
+-> Set the default editor used by Git.
+
+4. git config --global color.ui auto
+-> Set automatic command line coloring for Git or easy reviewing.
+
+--system for system-wide configurations by applying to all users on computer.
+--global for user level configurations by only applying to user account.
+--local for repository level configurations by only applying to the specific repository where they are set.
+
+5. git config --list
+-> List all the Git configurations.
+
+=============== Getting and Creating Projects ===============
+
+1. git init
+-> Create a new local repository.
+
+2. git clone <URL>
+-> Clone a repository into a new directory.
+
+=============== Basic Snapshotting ===============
+
+1. git add <FILE1> <FILE2>
+-> Add files to the staging area.
+
+2. git add .
+-> Add all new and changed files to the staging area.
+
+3. git commit -m "Commit Message"
+-> Commit changes to the repository with a message.
+
+4. git commit -am "Commit Message"
+-> Add all file and commit to the repository.
+
+5. git status
+-> Show the status of changes as untracked, modified, or staged.
+-> Untracked: Files that are not part of your project yet. They exist in your working directory but have not been added to the staging area.
+   Example: If you create a new file called newfile.txt but haven't run git add newfile.txt, this file will be untracked.
+-> Modified: Files that have been changed in your working directory but have not yet been staged.
+   Example: If you edit an existing file called example.txt but haven't run git add example.txt, this file will be in a modified state.
+-> Staged: Files that have been added to the staging area. These files are ready to be committed.
+   Example: If you run git add example.txt, the file moves from a modified state to a staged state.
+
+6. git diff
+-> Show differences between working directory and index.
+
+7. git diff --staged
+-> Show differences between the index and the last commit.
+
+8. git reset <FILE>
+-> Unstage a file while retaining change in working directory.
+
+9. git reset --hard
+-> Reset the working directory to the last commit.
+
+=============== Branching and Merging ===============
+
+1. git branch 
+-> List branches.
+
+2. git branch <Branch Name>
+-> Create a new branch.
+
+3. git checkout <Branch Name> / git switch <Branch Name>
+-> Switch to a branch.
+
+4. git merge <Branch Name>
+-> Merge a branch into the current branch.
+
+5. git branch -d <Branch Name>
+-> Delete a branch.
+
+6. git checkout -b <Branch Name>
+-> Create and switch branch directly.
+
+=============== Sharing and Updating Projects ===============
+
+1. git remote add <Alias> <Url>
+-> Add a remote repository.
+
+2. git fetch <Alias>
+-> Fetch changes from a remote repository.
+
+3. git pull <Alias> <Branch>
+-> Fetch and merge changes from a remote branch.
+
+4. git push <Alias> <Branch>
+-> Push changes to a remote branch.
+
+5. git push --set-upstream <Alias> <Branch>
+-> Push a branch to a remote repository and set it as the upstream branch.
+
+Default <Alias> is origin
+
+=============== Inspection and Comparison ===============
+
+1. git log
+-> Show the commit history.
+
+2. git log --oneline --graph --decorate --all
+-> Show a graph of the commit history.
+
+3. git show <Commit Code>
+-> Show information about a specific commit.
+
+4. git diff <Commit Code 1> <Commit Code 2>
+-> Show differences between 2 commits.
+
+5. git reflog
+-> Show a commit or want to recover a previous state of your working directory / See the commit code.
+
+6. git log --follow <File>
+-> Show the commits that changed file, even across renames.
+
+7. git log --stat -M
+-> Show all commit logs with indication of any paths that moved.
+
+8. git rm <File>
+-> Delete the file from project and stage the removal for commit.
+
+9. git mv <Existing Path> <New Path>
+-> Change an existing file path and stage the move.
+
+=============== Undoing Changes ===============
+
+1. git revert <Commit Code>
+-> Create a new commit that undoes the changes from a previous commit.
+
+2. git reset --hard <Commit Code>
+-> Reset the working directory and staging area to match a commit.
+
+3. git clean -f
+-> Remove untracked files from the working directory.
+
+=============== Stashing ===============
+
+1. git stash
+-> Save changes temporarily.
+
+2. git stash apply
+-> Apply the most recently stashed changes.
+
+3. git stash list
+-> List stashed changes.
+
+4. git stash drop
+-> Remove a stashed state.
+
+5. git stash pop
+-> Write working rom top of stash stack.
+
+=============== Advanced Branching and Merging ===============
+
+1. git rebase <Branch>
+-> Reapply commits on top of another base tip.
+
+2. git cherry-pick <Commit Code>
+-> Apply the changes introduced by some existing commit.
+
+=============== Tagging ===============
+
+1. git tag
+-> List tags.
+
+2. git tag <Tag Name>
+-> Create a new tag.
+
+3. git tag -d <Tag Name>
+-> Delete a tag.
+
+4. git push <Alias> <Tag Name>
+-> Push a tag to a remote repository.
+
+=============== Rewriting History ===============
+
+1. git commit --amend
+-> Modify the most recend commit.
+
+2. git rebase -i <Base>
+-> Interactively rebase commits onto another base.
+
+=============== Submodules ===============
+
+1. git submodule add <Url> <Path>
+-> Add a submodule.
+
+2. git submodule init
+-> Initialize the Submodules.
+
+3. git submodule update
+-> Update the submodules.
+
+Submodule memungkinkan untuk memasukkan atau menanamkan satu atau lebih repositori sebagai sub-folder di dalam repositori yang sedang kita buat atau kembangkan
